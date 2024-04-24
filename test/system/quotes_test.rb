@@ -9,11 +9,11 @@ class QuotesTest < ApplicationSystemTestCase
     visit quotes_path
     assert_selector 'h1', text: 'Quotes'
 
-    click_on 'New Quote'
-    assert_selector 'h1', text: 'New Quote'
+    click_on 'New quote'
+    assert_selector 'h1', text: 'New quote'
 
     fill_in 'Name', with: "real G's move in silence like lasagna"
-    click_on 'Create Quote'
+    click_on 'Create quote'
 
     assert_selector 'h1', text: 'Quotes'
     assert_text "real G's move in silence like lasagna"
@@ -31,10 +31,10 @@ class QuotesTest < ApplicationSystemTestCase
     assert_selector 'h1', text: 'Quotes'
 
     click_on 'Edit', match: :first
-    assert_selector 'h1', text: 'Edit Quote'
+    assert_selector 'h1', text: 'Edit quote'
 
     fill_in 'Name', with: 'Updated Quote'
-    click_on 'Update Quote'
+    click_on 'Update quote'
 
     assert_selector 'h1', text: 'Quotes'
     assert_text 'Updated Quote'
@@ -42,7 +42,7 @@ class QuotesTest < ApplicationSystemTestCase
 
   test 'Destroying a quote' do
     visit quotes_path
-    assert_test @quote.name
+    assert_text @quote.name
 
     click_on 'Delete', match: :first
     assert_no_text @quote.name
