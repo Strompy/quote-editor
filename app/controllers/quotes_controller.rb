@@ -24,7 +24,7 @@ class QuotesController < ApplicationController
     def edit; end
 
     def update
-        if @quote.update(update_params)
+        if @quote.update(quote_params)
             redirect_to quotes_path, notice: "Quote was successfully updated!"
         else
             render :edit
@@ -39,7 +39,7 @@ class QuotesController < ApplicationController
     private
 
     def set_quote
-        @quote = Quote.find(params(:id))
+        @quote = Quote.find(params[:id])
     end
 
     def quote_params
