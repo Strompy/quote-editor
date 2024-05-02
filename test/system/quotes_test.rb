@@ -17,7 +17,6 @@ class QuotesTest < ApplicationSystemTestCase
     assert_selector 'h1', text: 'Quotes'
 
     click_on 'New quote'
-    # assert_selector 'h1', text: 'New quote'
     fill_in 'Name', with: "Real G's move in silence like lasagna"
     
     assert_selector "h1", text: "Quotes"
